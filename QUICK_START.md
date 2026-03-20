@@ -12,6 +12,19 @@ Three tools for scraping CodePen projects:
 
 ---
 
+## Setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m playwright install chromium
+```
+
+If your system blocks global `pip install` with an `externally-managed-environment` error, use the local virtual environment above.
+
+---
+
 ## GUI Version (Recommended for most users)
 
 ### Start the app:

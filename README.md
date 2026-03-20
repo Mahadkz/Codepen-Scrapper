@@ -40,11 +40,15 @@ Three Tools Included
 git clone https://github.com/Mahadkz/Codepen-Scrapper.git
 cd Codepen-Scrapper
 
+# Create and activate a local virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
 # Install dependencies
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # Install browser (one-time only)
-playwright install chromium
+python -m playwright install chromium
 ```
 
 ### Dependencies
