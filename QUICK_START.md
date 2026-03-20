@@ -21,7 +21,7 @@ python -m pip install -r requirements.txt
 python -m playwright install chromium
 ```
 
-If your system blocks global `pip install` with an `externally-managed-environment` error, use the local virtual environment above.
+If your system blocks global `pip install` with an `externally-managed-environment` error, use the local virtual environment above. You can also skip activation and run the app directly with `.venv/bin/python`.
 
 ---
 
@@ -29,7 +29,7 @@ If your system blocks global `pip install` with an `externally-managed-environme
 
 ### Start the app:
 ```bash
-python codepen_advanced_scraper.py
+.venv/bin/python codepen_advanced_scraper.py
 ```
 
 ### Steps:
@@ -55,7 +55,7 @@ https://codepen.io/GreenSock/pen/myVvRyV
 
 ### Basic usage:
 ```bash
-python codepen_cli.py urls.txt --format json --output results.json
+.venv/bin/python codepen_cli.py urls.txt --format json --output results.json
 ```
 
 ### Options:
@@ -67,16 +67,16 @@ python codepen_cli.py urls.txt --format json --output results.json
 ### Examples:
 ```bash
 # JSON output
-python codepen_cli.py urls.txt --format json --output data.json
+.venv/bin/python codepen_cli.py urls.txt --format json --output data.json
 
 # YAML output with custom retries
-python codepen_cli.py urls.txt --format yaml --output data.yaml --retries 3
+.venv/bin/python codepen_cli.py urls.txt --format yaml --output data.yaml --retries 3
 
 # Markdown report
-python codepen_cli.py urls.txt --format markdown --output report.md
+.venv/bin/python codepen_cli.py urls.txt --format markdown --output report.md
 
 # Print to console
-python codepen_cli.py urls.txt --format markdown
+.venv/bin/python codepen_cli.py urls.txt --format markdown
 ```
 
 ---
@@ -227,18 +227,18 @@ codepen/
 ### Batch processing multiple files:
 ```bash
 for file in urls*.txt; do
-  python codepen_cli.py "$file" --format json --output "results_$(basename $file .txt).json"
+  .venv/bin/python codepen_cli.py "$file" --format json --output "results_$(basename $file .txt).json"
 done
 ```
 
 ### Extract only pen names:
 ```bash
-python -c "import json; data = json.load(open('results.json')); print('\n'.join(p['name'] for p in data))"
+.venv/bin/python -c "import json; data = json.load(open('results.json')); print('\n'.join(p['name'] for p in data))"
 ```
 
 ### Count successful scrapes:
 ```bash
-python -c "import json; data = json.load(open('results.json')); print(f\"Success: {sum(1 for p in data if not p['error'])}/{len(data)}\")"
+.venv/bin/python -c "import json; data = json.load(open('results.json')); print(f\"Success: {sum(1 for p in data if not p['error'])}/{len(data)}\")"
 ```
 
 ---

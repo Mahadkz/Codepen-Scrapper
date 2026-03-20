@@ -63,7 +63,7 @@ python -m playwright install chromium
 ### Option 1: GUI (Recommended for Most Users)
 
 ```bash
-python codepen_advanced_scraper.py
+.venv/bin/python codepen_advanced_scraper.py
 ```
 
 **Steps:**
@@ -77,13 +77,13 @@ python codepen_advanced_scraper.py
 
 ```bash
 # Basic usage
-python codepen_cli.py urls.txt --format json --output results.json
+.venv/bin/python codepen_cli.py urls.txt --format json --output results.json
 
 # With custom retries
-python codepen_cli.py urls.txt --format yaml --output results.yaml --retries 3
+.venv/bin/python codepen_cli.py urls.txt --format yaml --output results.yaml --retries 3
 
 # Print to console
-python codepen_cli.py urls.txt --format markdown
+.venv/bin/python codepen_cli.py urls.txt --format markdown
 ```
 
 ### Option 3: Python API
@@ -110,17 +110,17 @@ asyncio.run(scrape())
 
 ### Example 1: Scrape and Save as JSON
 ```bash
-python codepen_cli.py examples/urls.txt --format json --output output/results.json
+.venv/bin/python codepen_cli.py examples/urls.txt --format json --output output/results.json
 ```
 
 ### Example 2: Generate Markdown Report
 ```bash
-python codepen_cli.py examples/urls.txt --format markdown --output output/report.md
+.venv/bin/python codepen_cli.py examples/urls.txt --format markdown --output output/report.md
 ```
 
 ### Example 3: Batch Processing with Retries
 ```bash
-python codepen_cli.py examples/urls.txt \
+.venv/bin/python codepen_cli.py examples/urls.txt \
   --format json \
   --output output/data.json \
   --retries 5
@@ -128,7 +128,7 @@ python codepen_cli.py examples/urls.txt \
 
 ### Example 4: Console Output
 ```bash
-python codepen_cli.py examples/urls.txt --format yaml
+.venv/bin/python codepen_cli.py examples/urls.txt --format yaml
 ```
 
 ---
